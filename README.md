@@ -23,38 +23,38 @@ steering angle, Alpha = -Tau_p*CTE - Tau_d*d/dt(CTE)
 
 it means when the car is turned enough to reduce the cross track error, it won’t just go shooting for the reference trajectory but it will notice that it is already reducing the error and as the error is becoming smaller overtime, it counter steers. It steers up again, this will allow it to gracefully approach the reference trajectory.
 
-Video ![alt text][video2]  with PD only, the car oscillate , CTE increases constantly, steering is going from positive to negative & positive back again and ultimately overshoot  from 5 to 12 second
+Video ![alt text][video2]  with PD only, the car oscillate , CTE increases constantly, steering is going from positive to negative & positive back again and ultimately overshoot  from 5 to 12 second  
 
-cte: -1.2626 Steering Value: 0.382209 Throttle 0.2 speed 28.6455 angel 9.8254
-cte: -1.2636 Steering Value: 0.37935 Throttle 0.2 speed 28.6276 angel 9.8896
-cte: -1.2545 Steering Value: 0.373893 Throttle 0.2 speed 28.593 angel 9.9916
-cte: -1.2445 Steering Value: 0.37065 Throttle 0.2 speed 28.577 angel 9.9201
-cte: -1.2134 Steering Value: -0.613398 Throttle 0.2 speed 28.5478 angel 9.7837
-cte: -1.1924 Steering Value: -0.600201 Throttle 0.2 speed 28.5339 angel 9.7026
-cte: -1.1494 Steering Value: -0.584701 Throttle 0.2 speed 28.3531 angel -14.8986
-cte: -1.1283 Steering Value: -0.568267 Throttle 0.2 speed 28.2967 angel -14.5687
-cte: -1.0867 Steering Value: -0.553061 Throttle 0.2 speed 28.0996 angel -14.1812
-cte: -1.0662 Steering Value: -0.537142 Throttle 0.2 speed 27.9935 angel -13.7704
-cte: -1.0292 Steering Value: -0.523149 Throttle 0.2 speed 27.8336 angel -13.3902
-cte: -0.9979 Steering Value: -0.506004 Throttle 0.2 speed 27.6959 angel -12.9922
-cte: -0.9858 Steering Value: -0.494787 Throttle 0.2 speed 27.6401 angel -12.6424
-cte: -0.9695 Steering Value: -0.487794 Throttle 0.2 speed 27.5536 angel -12.2138
-cte: -0.9669 Steering Value: -0.482798 Throttle 0.2 speed 27.4898 angel -11.9333
-cte: -0.9709 Steering Value: -0.483011 Throttle 0.2 speed 27.4635 angel -11.7585
-cte: -0.9897 Steering Value: -0.488388 Throttle 0.2 speed 27.4197 angel -11.6336
-cte: -1.0046 Steering Value: -0.496871 Throttle 0.2 speed 27.4002 angel -11.6389
-cte: -1.0455 Steering Value: -0.510243 Throttle 0.2 speed 27.363 angel -11.7734
-cte: -1.0717 Steering Value: -0.527276 Throttle 0.2 speed 27.3447 angel -11.9854
-cte: -1.1019 Steering Value: -0.541253 Throttle 0.2 speed 27.3248 angel -12.3198
-cte: -1.1747 Steering Value: -0.566049 Throttle 0.2 speed 27.2834 angel -12.7456
-cte: -1.2174 Steering Value: -0.109359 Throttle 0.2 speed 27.2627 angel -13.095
-cte: -1.3162 Steering Value: -0.104023 Throttle 0.2 speed 27.2162 angel -13.7149
-cte: -1.3689 Steering Value: -0.121703 Throttle 0.2 speed 27.2069 angel -2.2976
-cte: -1.4228 Steering Value: -0.126731 Throttle 0.2 speed 27.1866 angel -2.1642
-cte: -1.5345 Steering Value: 0.429236 Throttle 0.2 speed 27.1703 angel -2.6062
-cte: -1.5924 Steering Value: 0.429768 Throttle 0.2 speed 27.1654 angel -2.7319
-cte: -1.7056 Steering Value: 0.474139 Throttle 0.2 speed 27.0142 angel 11.1672
-cte: -1.7601 Steering Value: 0.472464 Throttle 0.2 speed 26.9583 angel 11.1805
+cte: -1.2626 Steering Value: 0.382209 Throttle 0.2 speed 28.6455 angel 9.8254  
+cte: -1.2636 Steering Value: 0.37935 Throttle 0.2 speed 28.6276 angel 9.8896  
+cte: -1.2545 Steering Value: 0.373893 Throttle 0.2 speed 28.593 angel 9.9916  
+cte: -1.2445 Steering Value: 0.37065 Throttle 0.2 speed 28.577 angel 9.9201  
+cte: -1.2134 Steering Value: -0.613398 Throttle 0.2 speed 28.5478 angel 9.7837  
+cte: -1.1924 Steering Value: -0.600201 Throttle 0.2 speed 28.5339 angel 9.7026  
+cte: -1.1494 Steering Value: -0.584701 Throttle 0.2 speed 28.3531 angel -14.8986  
+cte: -1.1283 Steering Value: -0.568267 Throttle 0.2 speed 28.2967 angel -14.5687  
+cte: -1.0867 Steering Value: -0.553061 Throttle 0.2 speed 28.0996 angel -14.1812  
+cte: -1.0662 Steering Value: -0.537142 Throttle 0.2 speed 27.9935 angel -13.7704  
+cte: -1.0292 Steering Value: -0.523149 Throttle 0.2 speed 27.8336 angel -13.3902  
+cte: -0.9979 Steering Value: -0.506004 Throttle 0.2 speed 27.6959 angel -12.9922  
+cte: -0.9858 Steering Value: -0.494787 Throttle 0.2 speed 27.6401 angel -12.6424  
+cte: -0.9695 Steering Value: -0.487794 Throttle 0.2 speed 27.5536 angel -12.2138  
+cte: -0.9669 Steering Value: -0.482798 Throttle 0.2 speed 27.4898 angel -11.9333  
+cte: -0.9709 Steering Value: -0.483011 Throttle 0.2 speed 27.4635 angel -11.7585  
+cte: -0.9897 Steering Value: -0.488388 Throttle 0.2 speed 27.4197 angel -11.6336  
+cte: -1.0046 Steering Value: -0.496871 Throttle 0.2 speed 27.4002 angel -11.6389  
+cte: -1.0455 Steering Value: -0.510243 Throttle 0.2 speed 27.363 angel -11.7734  
+cte: -1.0717 Steering Value: -0.527276 Throttle 0.2 speed 27.3447 angel -11.9854  
+cte: -1.1019 Steering Value: -0.541253 Throttle 0.2 speed 27.3248 angel -12.3198  
+cte: -1.1747 Steering Value: -0.566049 Throttle 0.2 speed 27.2834 angel -12.7456  
+cte: -1.2174 Steering Value: -0.109359 Throttle 0.2 speed 27.2627 angel -13.095  
+cte: -1.3162 Steering Value: -0.104023 Throttle 0.2 speed 27.2162 angel -13.7149  
+cte: -1.3689 Steering Value: -0.121703 Throttle 0.2 speed 27.2069 angel -2.2976  
+cte: -1.4228 Steering Value: -0.126731 Throttle 0.2 speed 27.1866 angel -2.1642  
+cte: -1.5345 Steering Value: 0.429236 Throttle 0.2 speed 27.1703 angel -2.6062  
+cte: -1.5924 Steering Value: 0.429768 Throttle 0.2 speed 27.1654 angel -2.7319  
+cte: -1.7056 Steering Value: 0.474139 Throttle 0.2 speed 27.0142 angel 11.1672  
+cte: -1.7601 Steering Value: 0.472464 Throttle 0.2 speed 26.9583 angel 11.1805  
 
 ### I Component 
 
