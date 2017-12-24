@@ -18,8 +18,9 @@ Video ![alt text][video1] demonstrate overshoot and drive along the reference tr
 
 ### D Component
 
-To avoid this overshot  PD controller is needed. In PD-controller the steering alpha is not just related to the CTE by a factor of Tau-p but all to the temporal derivative of the cross track error,
-steering angle, Alpha = -Tau_p*CTE - Tau_d*d/dt(CTE)
+To avoid this overshot  PD controller is needed. In PD-controller the steering alpha is not just related to the CTE by a factor of Tau-p but all to the temporal derivative of the cross track error,  
+  
+steering angle, Alpha = -Tau_p*CTE - Tau_d*d/dt(CTE)  
 
 it means when the car is turned enough to reduce the cross track error, it won’t just go shooting for the reference trajectory but it will notice that it is already reducing the error and as the error is becoming smaller overtime, it counter steers. It steers up again, this will allow it to gracefully approach the reference trajectory.
 
@@ -58,8 +59,10 @@ cte: -1.7601 Steering Value: 0.472464 Throttle 0.2 speed 26.9583 angel 11.1805
 
 ### I Component 
 
-A car might have a from wheels not aligned appropriately , in robotics it is called Systematic bias.  Systematic bias will significantly increase the CTE in PD controller, so the differential term will not be able to  compensate for this. This is where the I components come to play which is measured by the integral or the sum of the CTEs over time 
-steering angle, Alpha = -Tau_p*CTE - Tau_d*d/dt(CTE) - Tau_I*Sum(CTE)
+A car might have a from wheels not aligned appropriately , in robotics it is called Systematic bias.  Systematic bias will significantly increase the CTE in PD controller, so the differential term will not be able to  compensate for this. This is where the I components come to play which is measured by the integral or the sum of the CTEs over time   
+   
+steering angle, Alpha = -Tau_p*CTE - Tau_d*d/dt(CTE) - Tau_I*Sum(CTE)  
+
 if there is a constant cross track error of say 0.8 , the sum will increased by each time unit and it will become larger and larger & eventually it will correct the robot motion.
 
 Video ![alt text][video3] Demonstrate a Full Track drive with PID conponent  
