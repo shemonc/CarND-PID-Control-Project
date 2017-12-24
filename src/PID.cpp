@@ -16,21 +16,55 @@ PID::~PID() {}
 void 
 PID::Init (double Kp, double Ki, double Kd)
 {
-    this->Kp = 0;
-    this->Ki = 0;
-    this->Kd = 0;
+    this->Kp = Kp;
+    this->Ki = Ki;
+    this->Kd = Kd;
     p_error = 0.3;
     i_error = 0.1;
     d_error = 0.3;
+
+    /*
+     * Total cross track error
+     */
     total_cte = 0.0;
+
+    /*
+     * Put best_err to some higher number
+     */
     best_err = 100000;
+
+    /*
+     *  default steering value
+     */
     steer = 0.0;
+
+    /*
+     * Initialize all controller state in STAGE1.
+     * Twiddle will be used to find the optimal value
+     * for each parameter.
+     */
     ctrl_state[P_CONTROLLER].update_stage = STAGE1;
     ctrl_state[PD_CONTROLLER].update_stage = STAGE1;
     ctrl_state[PI_CONTROLLER].update_stage = STAGE1;
+    
+    /*
+     * During twiddling this flag current_controller will indicate
+     * for which controller it is evaluating the optimal value
+     * start with P_CONTROLLER
+     */
     current_controller = P_CONTROLLER;
+   
+    /*
+     * idle steps count before twiddle will start evaluating
+     * and contribute to P, I, D coefficients.
+     */
     steps = 0;
+
+    /*
+     * Default throttle value
+     */
     throttle = 0.3;
+
     speed = 0.0;
 }
 
@@ -124,7 +158,7 @@ PID::ApplyAdaptiveThrottle (double cte)
     } else if (fabs(cte) < 0.8 ) {
         throttle = 0.25;
     } else {
-        throttle = 0.2;
+        throttle = 0.1;
     }
 }
 
